@@ -35,7 +35,7 @@ class Music(object):
         self._loop = False
 
     def dll_init(self):
-        self.dll = ctypes.CDLL("SoundTouch_x64.dll")
+        self.dll = ctypes.CDLL("SoundTouch_x64.dll", winmode=0)
 
         self.soundtouch_getVersionString = self.dll.soundtouch_getVersionString
         self.soundtouch_getVersionString.restype = ctypes.c_char_p
